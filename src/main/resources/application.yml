@@ -1,0 +1,33 @@
+
+azure:
+  activedirectory:
+    enabled: true
+    client-id:
+    client-secret:
+    tenant-id:
+    app-id-uri:
+    authorization-clients:
+      graph:
+        scopes:
+          - https://graph.microsoft.com/User.Read
+          - https://graph.microsoft.com/User.Read.All
+
+microsoft:
+  graph:
+    client-id:
+    client-secret:
+    tenant-id:
+    scope: https://graph.microsoft.com/.default
+
+
+server:
+  port: 8080
+spring:
+  application:
+    name: auth
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://sts.windows.net/{tenant-id}/
+
